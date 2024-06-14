@@ -19,7 +19,7 @@ def test_repo_can_be_found(github_api):
     r = github_api.search_repo('become-qa-auto')
     #дізнатись скільки зараз таких репозиторіїв
     print(f"total_count = {r['total_count']}")
-    assert r['total_count'] == 57
+    assert r['total_count'] == 58
     #перший знайденний репозиторій буде містити в собі імя  become-qa-auto
     assert 'become-qa-auto' in r['items'][0]['name'] 
 

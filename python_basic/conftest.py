@@ -1,5 +1,7 @@
 import pytest
-from modules.api.clients.github import GitHub
+from modules.api.clients.github_user_search import GitHub
+from modules.api.clients.github_commit import GitHubCommit
+from modules.api.clients.github_emoji import GitHubEmoji
 
 class User:
 
@@ -29,4 +31,14 @@ def user():
 @pytest.fixture
 def github_api():
     api = GitHub()
+    yield api
+
+@pytest.fixture
+def github_api_commit():
+    api = GitHubCommit()
+    yield api
+
+@pytest.fixture
+def github_api_emoji():
+    api = GitHubEmoji()
     yield api
